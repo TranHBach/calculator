@@ -94,7 +94,7 @@ function SingleButton() {
   function onClickHandler(event) {
     let insertedValue = "";
     if (event.target.innerText === "=") {
-      let result = eval(contextValue.operation.replace("⋅", "*"));
+      let result = eval(contextValue.operation.replaceAll("⋅", "*"));
       contextValue.setResult(result);
       contextValue.setOperation((prevState) => prevState + "=" + result);
     } else if (event.target.innerText === "AC") {
@@ -109,7 +109,7 @@ function SingleButton() {
     } else {
       insertedValue = event.target.innerText;
       contextValue.setResult((prevState) =>
-        parseInt(prevState + event.target.innerText)
+        parseInt((prevState + event.target.innerText).replace(/[x+-/]/g,''))
       );
     }
     if (event.target.innerText === "x") {
