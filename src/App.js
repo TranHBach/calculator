@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import BackgroundLayout from "./components/BackgroundLayout";
+import Result from "./components/Result";
+import SingleButton from "./components/SingleButton";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <a href="https://github.com/TranHBach/calculator.git" style={{margin: '45%'}}>Link to my code</a>
+      <BackgroundLayout>
+        <Result />
+        <SingleButton />
+      </BackgroundLayout>
+    </>
   );
 }
 
